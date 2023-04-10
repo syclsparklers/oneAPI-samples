@@ -1,0 +1,24 @@
+{
+    "guid": "A0DB8815-5EA4-4821-A838-8D0F3F7CAB0B",	
+    "name": "XeHE",
+    "categories": ["Toolkit/oneAPI Direct Programming/C++SYCL/Sparkler-XeHE"],
+    "description": "XeHE - a set of examples and a framework for homomorphically encrypted computations in SYCL",
+    "toolchain": [ "dpcpp" ],
+    "languages": [ { "cpp": {} } ],
+    "targetDevice": [ "CPU", "GPU" ],
+    "os": [ "linux" ],
+    "builder": ["cmake" ],
+    "ciTests": {
+      "linux": [{
+          "steps": [
+              "mkdir build",
+                        "cd build",
+                     "cmake -DCMAKE_C_COMPILER=icx -DCMAKE_CXX_COMPILER=icpx -DBUILD_WITH_IGPU=ON ..",
+                     "make -j",
+              "cd ..",
+              "./tests/tests [gpu]"
+           ]
+      }]  
+    },
+    "expertise": "Moderate"
+  }
